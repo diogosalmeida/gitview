@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav class="navbar navbar-light bg-light justify-content-center">
+        <form class="form-inline">
+          <input class="form-control mr-sm-4" type="text" placeholder="nome de usuário" aria-label="Search" #userName>
+          <button class="btn btn-outline-success my-4 my-sm-2" type="button" (click)="getUserName(userName.value)">Buscar</button>
+        </form>
+      </nav>
+    </div>
+  </div>
+  <div class="row" *ngIf="users">
+    <div class="col" *ngFor="let user of users.items">
+      <app-info-user *ngIf="user" [user]="user" class="justify-content-center"></app-info-user>
+    </div>
+  </div>
+</div>
